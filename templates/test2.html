@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+{% block content %}
+	<div class="container">
+		<div class="row extra-pad">
+			<div class="col-4">
+				<h2> Query Image: </h2>
+			</div>
+			<div class="col-4">
+			  <img src="{{qimg}}">
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-12" style="height:50px;"></div>
+
+	<div class="container">
+      {% for result, random in images %}
+      	<div class="row extra-pad">
+      	  <div class="col-4">
+		    <img src="{{result}}">
+		  </div>
+		  <div class="col-4">
+		    <img src="{{random}}">
+		  </div>
+		</div>
+	  {% endfor %}
+	
+	<div class="col-xs-12" style="height:50px;"></div>
+
+
+	<div class="row extra-pad">
+	  <div class = "col-4">
+	  <form name="set-compare", action="/", method="POST">
+	  	<button type="submit" name="options" class="btn btn-primary mb-2" value="left">Left</button>
+	</form>
+	</div>
+	<div class = "col-4">
+	  <form name="set-compare", action="/", method="POST">
+	  	<button type="submit" name="options" class="btn btn-primary mb-2" value="right">Right</button>
+	</form>
+	</div>
+	</div>
+  </div>
+
+
+
+{% endblock %}
+{% endblock %}

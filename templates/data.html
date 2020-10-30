@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+{% block content %}
+	
+
+	<div class="container">
+      {% for label in labels %}
+      	<div class="row extra-pad">
+      	  <div class="col-4">
+		    <img src="{{label.user}}">
+		  </div>
+		  <div class="col-4">
+		    <img src="{{label.option}}">
+		  </div>
+		  <div class="col-4">
+		    <img src="{{label.gt}}">
+		  </div>
+		</div>
+	  {% endfor %}
+
+
+
+{% endblock %}
+{% endblock %}
